@@ -1,0 +1,1022 @@
+/* Reset */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header Styling */
+/* General Header Styling */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #00246B;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease;
+}
+
+/* Logo Styling (Optional) */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Navigation Links (Initially hidden on small screens) */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #EB6F46; /* Hover color */
+    border-bottom: 2px solid #EB6F46; /* Hover underline */
+}
+
+/* Menu Toggle (Hamburger) Button */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    border: none;
+    background: white;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+    /* Show the hamburger button on smaller screens */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Initially hide nav links on small screens */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        flex-direction: column;
+        padding: 1rem 0;
+        gap: 1rem;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    /* Style the nav links when the menu is active */
+    .nav-links.active {
+        display: flex;
+        transform: translateY(0); /* Slide down effect */
+    }
+
+    .nav-links li a {
+        font-size: 1.2rem;
+        text-transform: none; /* Remove uppercase on mobile */
+    }
+
+    /* Adjust the link size and padding for mobile */
+    .nav-links.active li a {
+        padding: 1rem 0;
+    }
+}
+
+/* For active state of the menu toggle */
+.nav-links.active {
+    display: flex;
+    transform: translateY(0);
+}
+
+
+/* Styling for the body to prevent content from being hidden behind the fixed header */
+body {
+    margin-top: 70px; /* Add top margin to the body so content doesn't get hidden behind the header */
+}
+
+
+/* Hero Section Styling */
+/* Hero Section Styling */
+.hero {
+    height: 100vh;
+    background: radial-gradient(#CADCFC, #00246B);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+    position: relative;
+    flex-direction: row; /* Align content horizontally */
+    overflow: hidden;
+}
+
+/* Hero Content Styling */
+.hero-content {
+    max-width: 600px; /* Limits content width */
+    z-index: 2; /* Ensures text is above image and icons */
+    margin-right: 20px; /* Small margin for spacing */
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.hero h1 span {
+    color: #00246B;
+}
+
+/* Typing Effect Styles */
+.typing-container {
+    /* display: inline-block; */
+    position: relative;
+    font-size: 2.2rem;
+    margin-top: 2rem;
+    font-weight: bold;
+    color: #00246B;
+}
+
+.typed-text {
+    /* display: inline-block; */
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    border-right: 3px solid #00246B;
+    animation: typing 5s steps(20) 1s forwards, step-end infinite;
+}
+.hero-content p{
+    margin-right: 80px;
+}
+
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 30px;
+    background-color: #00246B;
+    animation: blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    0%, 50%, 100% {
+        opacity: 0;
+    }
+    25%, 75% {
+        opacity: 1;
+    }
+}
+
+/* Social Icons Styling */
+.social-icons {
+    position: absolute;
+    top: 20%;
+    left: 2%;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 35px; /* Icon size */
+    height: 35px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%; /* Round social media icons */
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #00246B;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+}
+
+/* Hero Image Styling */
+.hero-image {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%); /* Centers the image vertically */
+    z-index: 1;
+}
+
+.hero-image img {
+    width: 500px; /* Image size */
+    height: 500px; /* Image size */
+    object-fit: cover;
+    border-radius: 50%; /* Circular image */
+    border: 5px solid #00246B; /* White border around the image */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Optional shadow for image */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-content {
+        max-width: 500px; /* Adjust content width for tablets */
+    }
+
+    .hero h1 {
+        font-size: 2.5rem; /* Adjust font size for tablets */
+    }
+
+    .typing-container {
+        font-size: 1.1rem; /* Adjust typing effect size for tablets */
+    }
+
+    .hero-image img {
+        width: 400px; /* Adjust image size for tablets */
+        height: 400px; /* Adjust image size for tablets */
+    }
+
+    .social-icons {
+        top: 15%;
+        left: 5%;
+    }
+
+    .social-icon {
+        width: 40px; /* Adjust icon size for tablets */
+        height: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* For mobile view */
+    .hero-content {
+        max-width: 100%; /* Make content full-width on mobile */
+        text-align: center; /* Center-align text on mobile */
+    }
+
+    .hero h1 {
+        font-size: 2rem; /* Adjust heading size */
+        margin-bottom: 0.5rem; /* Adjust spacing */
+    }
+
+    .hero p {
+        font-size: 1rem; /* Adjust paragraph size */
+    }
+
+    .typing-container {
+        font-size: 1rem; /* Adjust typing effect font size */
+    }
+
+    .social-icons {
+        top: 10%;
+        left: 5%;
+        gap: 10px; /* Reduce gap between icons */
+    }
+
+    .social-icon {
+        width: 30px; /* Adjust icon size for smaller screens */
+        height: 30px;
+    }
+
+    .hero-image {
+        top: 50%;
+        right: 5%;
+    }
+
+    .hero-image img {
+        width: 120px; /* Adjust image size for smaller screens */
+        height: 120px; /* Adjust image size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    /* For very small screens (e.g., smaller mobile devices) */
+    .hero h1 {
+        font-size: 1.5rem; /* Adjust heading size */
+    }
+
+    .hero p {
+        font-size: 0.9rem; /* Adjust paragraph size */
+    }
+
+    .social-icons {
+        top: 10%;
+        left: 5%;
+        gap: 8px; /* Further reduce gap between icons */
+    }
+
+    .social-icon {
+        width: 25px; /* Further reduce icon size */
+        height: 25px;
+    }
+
+    .hero-image img {
+        width: 100px; /* Further reduce image size */
+        height: 100px; /* Further reduce image size */
+    }
+}
+
+
+
+/* Section Styling */
+.section {
+    padding: 6rem 2rem; /* Add more padding for larger screens */
+    position: relative;
+    overflow: hidden; /* Ensure content does not overflow */
+}
+
+/* Dark Shade Box */
+.background-box {
+    position: absolute;
+    top: 32px;
+    left: 32px;
+    right: 32px;
+    bottom: 32px;
+    background: radial-gradient(#CADCFC, #00246B); /* Dark overlay background */
+    z-index: -1; /* Ensures the box is behind the text */
+    border-radius: 72px; /* Optional: rounded corners for the box */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adds shadow to the box */
+}
+
+/* Container Styling */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 1; /* Ensures text stays above the background box */
+    color: #fff; /* White text on dark background */
+    padding: 2rem;
+}
+
+/* Title Styling */
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #00246B; /* White heading for contrast */
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px; /* Slightly below the heading */
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #00246B; /* Blue underline effect */
+}
+
+.container p2 {
+    color: #000000;
+}
+
+/* Paragraph Styling */
+p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #000000; /* Light grey text for paragraph */
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Hover Effect for Paragraph */
+p:hover {
+    /* color: #007BFF; Change text color on hover */
+    transition: color 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .section {
+        padding: 5rem 1.5rem; /* Reduce padding for tablets */
+    }
+
+    h2 {
+        font-size: 2.2rem; /* Adjust heading size for tablets */
+    }
+
+    p {
+        font-size: 1rem; /* Adjust paragraph size */
+    }
+
+    .container {
+        padding: 0 1rem; /* Add some padding for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    /* For mobile view */
+    .section {
+        padding: 4rem 1.5rem; /* Reduce padding for smaller screens */
+    }
+
+    h2 {
+        font-size: 1.8rem; /* Further reduce heading size on mobile */
+    }
+
+    p {
+        font-size: 0.95rem; /* Adjust paragraph font size */
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 480px) {
+    /* For very small screens (e.g., smaller mobile devices) */
+    .section {
+        padding: 3rem 1rem; /* Further reduce padding on very small screens */
+    }
+
+    h2 {
+        font-size: 1.6rem; /* Adjust heading size even further */
+    }
+
+    p {
+        font-size: 0.9rem; /* Further reduce paragraph font size */
+    }
+}
+
+
+/* Section Styling */
+/* Section Styling */
+.section {
+    padding: 6rem 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    max-width: 1200px; /* Limit the width of the section */
+    margin: 0 auto; /* Center the section */
+}
+
+/* Heading Styling */
+h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #333;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #007BFF; /* Blue underline */
+}
+
+/* Skills Grid Layout */
+.skills-grid {
+    display: flex;
+    flex-direction: column;  /* Default column layout on small screens */
+    gap: 2rem;
+    margin-top: 2rem;
+    justify-content: center; /* Center-align the content */
+}
+
+/* Individual Skill Card */
+.skill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    flex-direction: column; /* Default vertical stacking */
+    background: radial-gradient(#CADCFC, #00246B);;
+    width: 90%; /* Set width to 90% to allow space between cards */
+    max-width: 500px; /* Max width for skill cards */
+    margin: 0 auto;
+}
+
+/* Skill Card Positioning (Alternating) */
+.skill:nth-child(odd) {
+    align-self: flex-start;  /* Left side for odd-numbered skills */
+    margin-left: 20%;  /* Add margin to shift left */
+}
+
+.skill:nth-child(even) {
+    align-self: flex-end;  /* Right side for even-numbered skills */
+    margin-right: 20%;  /* Add margin to shift right */
+}
+
+.skill:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Pronounced shadow on hover */
+}
+
+.skill:hover .icon {
+    transform: scale(1.2); /* Scale icon on hover */
+}
+
+.skill:hover h3 {
+    color: #fff;
+}
+
+.skill:hover p {
+    color: #00246B;
+}
+
+/* Icon Styling */
+.icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+/* Heading and Paragraph Styling */
+h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: color 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .section {
+        padding: 5rem 1.5rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .skills-grid {
+        flex-direction: column; /* Stack the skills vertically on tablets */
+        gap: 1.5rem; /* Adjust the gap between stacked items */
+    }
+
+    .skill {
+        width: 90%; /* Slightly smaller width on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 4rem 1rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+
+    .skills-grid {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+
+    .skill {
+        width: 95%; /* More compact width on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 3rem 1rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .skill {
+        width: 95%; /* Further reduce skill card width on mobile */
+        max-width: 400px; /* Ensure the skill card doesn't stretch too wide */
+    }
+}
+
+
+
+/* General Section Styling */
+#projects {
+    background-color: #f9f9f9;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+#projects h2 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+#projects h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #007BFF; /* Blue underline */
+}
+
+/* Projects Grid Styling */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* Individual Project Card Styling */
+.project {
+    perspective: 1500px; /* Adds perspective to create the flip effect */
+}
+
+.project-inner {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project:hover .project-inner {
+    transform: rotateY(180deg); /* Flip effect on hover */
+}
+
+/* Front of the project card */
+.project-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    /* background: linear-gradient(145deg, #007BFF, #00c6ff); */
+    padding: 1rem;
+    border-radius: 12px;
+    color: #fff;
+    text-align: center;
+}
+
+.project-front img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.project-front h3 {
+    font-size: 20px;
+    margin: 1rem 0;
+}
+
+.project-front p {
+    font-size: 1rem;
+}
+
+/* Back of the project card */
+.project-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: #fff;
+    color: #333;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transform: rotateY(180deg); /* Initially rotated to the back */
+}
+
+.project-back h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.project-back p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Hover effect for project card */
+.project:hover .project-front {
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    #projects h2 {
+        font-size: 2.5rem;
+    }
+
+    .project-back h3 {
+        font-size: 1.5rem;
+    }
+
+    .project-back p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #projects {
+        padding: 4rem 1rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr 1fr; /* 2 columns layout on smaller screens */
+    }
+
+    #projects h2 {
+        font-size: 2rem;
+    }
+
+    .project-front h3 {
+        font-size: 1.4rem;
+    }
+
+    .project-front p {
+        font-size: 1rem;
+    }
+
+    .project-back h3 {
+        font-size: 1.4rem;
+    }
+
+    .project-back p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #projects {
+        padding: 3rem 1rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr; /* Single column layout on very small screens */
+    }
+
+    #projects h2 {
+        font-size: 1.8rem;
+    }
+
+    .project-front h3 {
+        font-size: 1.2rem;
+    }
+
+    .project-front p {
+        font-size: 1rem;
+    }
+
+    .project-back h3 {
+        font-size: 1.3rem;
+    }
+
+    .project-back p {
+        font-size: 1rem;
+    }
+}
+
+
+
+/* Contact Section Styling */
+#contact {
+    background-color: #f9f9f9;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+#contact h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #007BFF; /* Blue underline */
+}
+
+/* Form Styling */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px); /* Slight hover effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #contact {
+        padding: 4rem 1rem;
+    }
+
+    #contact h2 {
+        font-size: 2.5rem;
+    }
+
+    #contact-form {
+        padding: 1.5rem;
+    }
+
+    input, textarea {
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #contact {
+        padding: 3rem 1rem;
+    }
+
+    #contact h2 {
+        font-size: 2rem;
+    }
+
+    #contact-form {
+        padding: 1rem;
+    }
+
+    input, textarea {
+        font-size: 0.95rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+}
+
+
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-toggle.active + .nav-links {
+        display: flex;
+    }
+}
