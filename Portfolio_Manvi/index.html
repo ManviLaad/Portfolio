@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manvi Laad | Portfolio</title>
+    <link rel="stylesheet" href="Index.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- Optional logo -->
+            <!-- Hamburger Menu Icon (3 lines) -->
+            <button class="menu-toggle" id="menuToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <!-- Navigation Links -->
+            <ul class="nav-links" id="navLinks">
+                <li><b><a href="#home">Home</a></b></li>
+                <li><b><a href="#about">About</a></b></li>
+                <li><b><a href="#skills">Skills</a></b></li>
+                <li><b><a href="#projects">Projects</a></b></li>
+                <li><b><a href="#contact">Contact</a></b></li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h3><b> Hi, I'm</b></h3> <h1><span>Manvi Laad</span></h1>
+            <p>A passionate CSE-Data Science student crafting impactful digital experiences.</p>
+            <div class="typing-container">
+                <span class="typed-text"></span><br>
+                        <!-- Social Icons over the Image -->
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/manvi-laad-89650124b/" target="_blank" class="social-icon linkedin">
+                <img src="data:image/jpeg;base64,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" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/ManviLaad" target="_blank" class="social-icon github">
+                <img src="data:image/jpeg;base64,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" alt="GitHub">
+            </a>
+        </div>
+            </div>
+            <a href="https://drive.google.com/file/d/1TXgslffnrsmTo4ly1qsGYl3djsXe_euF/view?usp=drive_link" class="btn">Download CV</a>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    
+        <!-- Image on the right side with circular outline -->
+        <div class="hero-image">
+            <img src="Manvi_Laad.jpg" alt="Manvi Laad">
+        </div>
+    </section>
+    
+    
+    
+
+    <section id="about" class="section">
+        <div class="background-box"></div>
+        <div class="container">
+            <h2>About Me</h2>
+            <p2>I'm Manvi Laad, currently pursuing a B.Tech degree in the field of Computer Science Engineering with specialization in Data Science from Institue Of Engineering and Science IPS Academy, Indore.<br>
+                A passionate Full Stack Developer with two months of experience in building and deploying web applications that deliver seamless user experiences. Proficient in <b>C/C++, HTML, CSS, JavaScript, PHP, Python, and MySQL</b>, I have also worked on AI-based projects utilizing Python libraries like, <b> Pandas, and Matplotlib </b>. My commitment to thorough testing, innovative problem-solving, and continuous learning drives me to stay at the forefront of technology and explore data science advancements.
+            </p2>
+        </div>
+    </section>
+    
+
+    <section id="skills" class="section">
+        <h2>My Skills</h2>
+        <div class="skills-grid">
+            <div class="skill left">
+                <div class="icon">💻</div>
+                <h3>Frontend</h3>
+                <p>HTML, CSS, JavaScript, Bootstrap</p>
+            </div>
+            <div class="skill right">
+                <div class="icon">🔧</div>
+                <h3>Backend</h3>
+                <p>C, C++, PHP, MYSQl</p>
+            </div>
+            <div class="skill left">
+                <div class="icon">📊</div>
+                <h3>Data Science</h3>
+                <p>Python, Pandas, NUMPY, MATPLOTLIB </p>
+            </div>
+            <div class="skill right">
+                <div class="icon">📈</div>
+                <h3>Tools</h3>
+                <p>Android-studio, figma, VS CODE, JUPYTER NOTEBOOK</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="projects" class="section">
+        <h2>My Projects</h2>
+        <div class="projects-grid">
+            <div class="project">
+                <div class="project-inner">
+                    <div class="project-front">
+                        <img src="Image_Website.jpeg" alt="Project 1">
+                        <h3>Doctor Search Website || Full Stack Based Project</h3>
+                    </div>
+                    <div class="project-back">
+                        <h3>Project Details</h3>
+                        <p>Developed a doctor search website to connect users with healthcare providers, improving access to information. Designed front-end prototypes in Figma, built the back-end with XAMPP, and optimized functionality using PHP, jQuery, and Postman, resolving 10+ issues for a seamless user experience.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-inner">
+                    <div class="project-front">
+                        <img src="Application_Image.jpeg" alt="Project 2">
+                        <h3>LinkUpDoc: A Doctor Search Web Application || Full Stack Based Project</h3>
+                        
+                    </div>
+                    <div class="project-back">
+                        <h3>Project Details</h3>
+                        <p>• Developed a web app to connect patients with healthcare professionals, improving communication and appointment scheduling.<br>
+                            • Used PHP, JavaScript, and MySQL to enhance user interactions and reduce interface errors by 20%, boosting system reliability.<br>
+                            • Applied responsive design principles for an optimized user experience across devices.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-inner">
+                    <div class="project-front">
+                        <img src="Chatboat_Image.jpeg" alt="Project 3">
+                        <h3>SmartPDF Chatbot || AI Based Project</h3>
+                        <!-- <p>A real-time analytics web application.</p> -->
+                    </div>
+                    <div class="project-back">
+                        <h3>Project Details</h3>
+                        <p>• Created a chatbot using Flask for summarizing and answering questions from PDFs with BERT and T5 models, overcoming challenges in text extraction and preprocessing to improve performance.<br>
+                           • Utilized BART for summarization and T5 for question answering, ensuring accurate and relevant responses.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <form id="contact-form">
+            <div class="form-group">
+                <input type="text" id="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <textarea id="message" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+    
+
+    <footer>
+        <p>© 2024 Manvi Laad. All rights reserved.</p>
+    </footer>
+
+    <script src="Index.js"></script>
+</body>
+</html>
